@@ -1,0 +1,156 @@
+{
+	"id": "aa5749f7-3ef8-42bb-bb88-d85ce4fca06a",
+	"name": "VK qa",
+	"timestamp": "2020-10-18T19:10:02.365Z",
+	"collection_id": "bfbb12c0-b00b-47ce-9f24-f669cd31c662",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 9,
+	"totalFail": 9,
+	"results": [
+		{
+			"id": "1ac40268-3480-4168-b7f1-5e076d2ec1fa",
+			"name": "likes.addOk",
+			"time": 29,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Validate schema": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Validate schema": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				42,
+				39,
+				29
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Validate schema": true
+				},
+				{
+					"Status code is 200": true,
+					"Validate schema": true
+				},
+				{
+					"Status code is 200": true,
+					"Validate schema": true
+				}
+			]
+		},
+		{
+			"id": "c7f685ae-452d-43a0-ae23-735bf1262c6c",
+			"name": "likes.addOkParamError",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Validate schema": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Validate schema": {
+					"pass": 0,
+					"fail": 3
+				}
+			},
+			"times": [
+				19,
+				19,
+				18
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Validate schema": false
+				},
+				{
+					"Status code is 200": true,
+					"Validate schema": false
+				},
+				{
+					"Status code is 200": true,
+					"Validate schema": false
+				}
+			]
+		},
+		{
+			"id": "670b9044-6306-4077-868f-672470c48331",
+			"name": "likes.addNotOk",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Validate schema": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 3
+				},
+				"Validate schema": {
+					"pass": 0,
+					"fail": 3
+				}
+			},
+			"times": [
+				9,
+				8,
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Validate schema": false
+				},
+				{
+					"Status code is 200": false,
+					"Validate schema": false
+				},
+				{
+					"Status code is 200": false,
+					"Validate schema": false
+				}
+			]
+		}
+	],
+	"count": 3,
+	"totalTime": 191,
+	"collection": {
+		"requests": [
+			{
+				"id": "1ac40268-3480-4168-b7f1-5e076d2ec1fa",
+				"method": "GET"
+			},
+			{
+				"id": "c7f685ae-452d-43a0-ae23-735bf1262c6c",
+				"method": "GET"
+			},
+			{
+				"id": "670b9044-6306-4077-868f-672470c48331",
+				"method": "GET"
+			}
+		]
+	}
+}

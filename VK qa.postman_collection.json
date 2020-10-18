@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "bfbb12c0-b00b-47ce-9f24-f669cd31c662",
+		"name": "VK qa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "likes.getListOk",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c6444dba-1952-4fca-9030-b2ed700ab540",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4b7468bd-6bf1-4a1c-aae8-f20c02cfe867",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const json_schema_for_likes_getList = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"description\": \"Json schema for likes.getList response\",\r",
+							"    \"required\": [\r",
+							"        \"response\"\r",
+							"    ],\r",
+							"    \"properties\": {\r",
+							"        \"response\": {            \r",
+							"            \"type\": \"object\",\r",
+							"            \"required\": [\r",
+							"                \"count\",\r",
+							"                \"items\",\r",
+							"            ],\r",
+							"            \"properties\": {\r",
+							"                \"count\": {                    \r",
+							"                    \"type\": \"integer\",                    \r",
+							"                },\r",
+							"                \"items\": {                    \r",
+							"                    \"type\": \"array\",                    \r",
+							"                    \"additionalItems\": true,\r",
+							"                    \"items\": {\r",
+							"                        \"anyOf\": [\r",
+							"                            {\r",
+							"                                \"type\": \"integer\"\r",
+							"                            }\r",
+							"                        ]\r",
+							"                    }\r",
+							"                }\r",
+							"            },\r",
+							"            \"additionalProperties\": false\r",
+							"        }\r",
+							"    },\r",
+							"    \"additionalProperties\": false\r",
+							"}\r",
+							"pm.test(\"Validate schema\", () => {\r",
+							"    pm.response.to.have.jsonSchema(json_schema_for_likes_getList);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prefix_uri}}/likes.getList?item_id={{item_id}}&owner_id={{owner_id}}&type={{type}}&access_token={{access_token}}&v={{v}}",
+					"host": [
+						"{{prefix_uri}}"
+					],
+					"path": [
+						"likes.getList"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.addOk",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f3af15d1-c160-4351-8f78-8683d8de9049",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1eec43d-71dd-4eab-bf98-e16d45a4d8f9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const json_schema_for_likes_add = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"description\": \"Json schema for likes.getList response\",\r",
+							"    \"required\": [\r",
+							"        \"response\"\r",
+							"    ],\r",
+							"    \"properties\": {\r",
+							"        \"response\": {            \r",
+							"            \"type\": \"object\",\r",
+							"            \"required\": [\r",
+							"                \"likes\"\r",
+							"            ],\r",
+							"            \"properties\": {\r",
+							"                \"likes\": {                    \r",
+							"                    \"type\": \"integer\",                    \r",
+							"                }\r",
+							"            },\r",
+							"            \"additionalProperties\": false\r",
+							"        }\r",
+							"    },\r",
+							"    \"additionalProperties\": false\r",
+							"}\r",
+							"pm.test(\"Validate schema\", () => {\r",
+							"    pm.response.to.have.jsonSchema(json_schema_for_likes_add);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prefix_uri}}/likes.add?item_id={{item_id}}&owner_id={{owner_id}}&type={{type}}&access_token={{access_token}}&v={{v}}",
+					"host": [
+						"{{prefix_uri}}"
+					],
+					"path": [
+						"likes.add"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.addOkParamError",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8df5c43c-4a0c-487c-a98f-8ea3c38b563a",
+						"exec": [
+							"pm.variables.set(\"access_token_wrong\", \"wrong access token\")"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbebf097-deca-41cb-b042-e70ea4bd51ff",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const json_schema_for_likes_add = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"description\": \"Json schema for likes.getList response\",\r",
+							"    \"required\": [\r",
+							"        \"response\"\r",
+							"    ],\r",
+							"    \"properties\": {\r",
+							"        \"response\": {            \r",
+							"            \"type\": \"object\",\r",
+							"            \"required\": [\r",
+							"                \"likes\"\r",
+							"            ],\r",
+							"            \"properties\": {\r",
+							"                \"likes\": {                    \r",
+							"                    \"type\": \"integer\",                    \r",
+							"                }\r",
+							"            },\r",
+							"            \"additionalProperties\": false\r",
+							"        }\r",
+							"    },\r",
+							"    \"additionalProperties\": false\r",
+							"}\r",
+							"pm.test(\"Validate schema\", () => {\r",
+							"    pm.response.to.have.jsonSchema(json_schema_for_likes_add);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prefix_uri}}/likes.add?item_id={{item_id}}&owner_id={{owner_id}}&type={{type}}&access_token={{access_token_wrong}}&v={{v}}",
+					"host": [
+						"{{prefix_uri}}"
+					],
+					"path": [
+						"likes.add"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token_wrong}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.addNotOk",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d969a91e-88c0-46af-a29f-d5601d8670e3",
+						"exec": [
+							"pm.variables.set(\"prefix_uri_wrong\", \"https://api.vk.com/methodd\")"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4f72067-db42-4047-8d38-7544085fef5c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const json_schema_for_likes_add = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"description\": \"Json schema for likes.getList response\",\r",
+							"    \"required\": [\r",
+							"        \"response\"\r",
+							"    ],\r",
+							"    \"properties\": {\r",
+							"        \"response\": {            \r",
+							"            \"type\": \"object\",\r",
+							"            \"required\": [\r",
+							"                \"likes\"\r",
+							"            ],\r",
+							"            \"properties\": {\r",
+							"                \"likes\": {                    \r",
+							"                    \"type\": \"integer\",                    \r",
+							"                }\r",
+							"            },\r",
+							"            \"additionalProperties\": false\r",
+							"        }\r",
+							"    },\r",
+							"    \"additionalProperties\": false\r",
+							"}\r",
+							"pm.test(\"Validate schema\", () => {\r",
+							"    pm.response.to.have.jsonSchema(json_schema_for_likes_add);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prefix_uri_wrong}}/likes.add?item_id={{item_id}}&owner_id={{owner_id}}&type={{type}}&access_token={{access_token}}&v={{v}}",
+					"host": [
+						"{{prefix_uri_wrong}}"
+					],
+					"path": [
+						"likes.add"
+					],
+					"query": [
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTokenOAuth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oauth.vk.com/authorize?client_id=test&scope=wall&redirect_uri=https://oauth.vk.com/blank.html&display=page&v=5.124&response_type=token",
+					"protocol": "https",
+					"host": [
+						"oauth",
+						"vk",
+						"com"
+					],
+					"path": [
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "test"
+						},
+						{
+							"key": "scope",
+							"value": "wall"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauth.vk.com/blank.html"
+						},
+						{
+							"key": "display",
+							"value": "page"
+						},
+						{
+							"key": "v",
+							"value": "5.124"
+						},
+						{
+							"key": "response_type",
+							"value": "token"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a0257a53-4a17-444e-ae17-a343f4727e76",
+				"type": "text/javascript",
+				"exec": [
+					"var items_for_test = [",
+					"    {",
+					"        \"item_id\": \"id1\",",
+					"        \"type\": \"post\",",
+					"        \"owner_id\": \"id1\"",
+					"    },",
+					"    {",
+					"        \"item_id\": \"id2\",",
+					"        \"type\": \"post\",",
+					"        \"owner_id\": \"id1\"",
+					"    },",
+					"    {",
+					"        \"item_id\": \"id3\",",
+					"        \"type\": \"post\",",
+					"        \"owner_id\": \"id1\"",
+					"    }",
+					"]",
+					"pm.collectionVariables.set(\"prefix_uri\", \"https://api.vk.com/method\")",
+					"pm.collectionVariables.set(\"access_token\", \"test_token\")",
+					"pm.collectionVariables.set(\"item_id\", items_for_test[pm.info.iteration][\"item_id\"])",
+					"pm.collectionVariables.set(\"owner_id\", items_for_test[pm.info.iteration][\"owner_id\"])",
+					"pm.collectionVariables.set(\"v\",\"5.52\")",
+					"pm.collectionVariables.set(\"type\", items_for_test[pm.info.iteration][\"type\"])",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1c09d10a-2ef5-46f0-a4ed-68558a5eab20",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ec8e5a53-bc1e-46e9-8570-c9861c042853",
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"id": "482912e3-5df1-4975-a24a-17ae99992296",
+			"key": "item_id",
+			"value": ""
+		},
+		{
+			"id": "c8a73daf-afc6-4532-b514-29a6d2415a84",
+			"key": "owner_id",
+			"value": ""
+		},
+		{
+			"id": "3582dfbe-d916-4f71-8b0b-43e35b233812",
+			"key": "prefix_uri",
+			"value": ""
+		},
+		{
+			"id": "76ec76a0-06c2-4d58-b071-f5e7e33c2cf9",
+			"key": "type",
+			"value": ""
+		},
+		{
+			"id": "5d2c2380-bf97-4dba-be36-bf4405184e1d",
+			"key": "v",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
