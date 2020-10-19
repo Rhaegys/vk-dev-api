@@ -75,7 +75,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{prefix_uri}}/likes.getList?item_id={{item_id}}&owner_id={{owner_id}}&type={{type}}&access_token={{access_token}}&v={{v}}",
+					"raw": "{{prefix_uri}}/likes.getList?item_id={{item_id}}&owner_id={{owner_id}}&type={{type}}&access_token={{access_token}}&v={{v}}&filter={{filter}}&extended={{extended}}&offset={{offset}}&count={{count}}&skip_own={{skip_own}}&friends_only={{friends_only}}",
 					"host": [
 						"{{prefix_uri}}"
 					],
@@ -102,6 +102,30 @@
 						{
 							"key": "v",
 							"value": "{{v}}"
+						},
+						{
+							"key": "filter",
+							"value": "{{filter}}"
+						},
+						{
+							"key": "extended",
+							"value": "{{extended}}"
+						},
+						{
+							"key": "offset",
+							"value": "{{offset}}"
+						},
+						{
+							"key": "count",
+							"value": "{{count}}"
+						},
+						{
+							"key": "skip_own",
+							"value": "{{skip_own}}"
+						},
+						{
+							"key": "friends_only",
+							"value": "{{friends_only}}"
 						}
 					]
 				}
@@ -437,27 +461,36 @@
 				"exec": [
 					"var items_for_test = [",
 					"    {",
-					"        \"item_id\": \"id1\",",
+					"        \"item_id\": \"testId1\",",
 					"        \"type\": \"post\",",
-					"        \"owner_id\": \"id1\"",
+					"        \"owner_id\": \"testOwnerId1\",",
+					"        \"access_token\": \"testToken1\"",
 					"    },",
 					"    {",
-					"        \"item_id\": \"id2\",",
+					"        \"item_id\": \"testId2\",",
 					"        \"type\": \"post\",",
-					"        \"owner_id\": \"id1\"",
+					"        \"owner_id\": \"testOwnerId2\",",
+					"        \"access_token\": \"testToken1\"",
 					"    },",
 					"    {",
-					"        \"item_id\": \"id3\",",
+					"        \"item_id\": \"testId3\",",
 					"        \"type\": \"post\",",
-					"        \"owner_id\": \"id1\"",
+					"        \"owner_id\": \"testOwnerId2\",",
+					"        \"access_token\": \"testToken1\"",
 					"    }",
 					"]",
 					"pm.collectionVariables.set(\"prefix_uri\", \"https://api.vk.com/method\")",
-					"pm.collectionVariables.set(\"access_token\", \"test_token\")",
+					"pm.collectionVariables.set(\"access_token\", items_for_test[pm.info.iteration][\"access_token\"])",
 					"pm.collectionVariables.set(\"item_id\", items_for_test[pm.info.iteration][\"item_id\"])",
 					"pm.collectionVariables.set(\"owner_id\", items_for_test[pm.info.iteration][\"owner_id\"])",
 					"pm.collectionVariables.set(\"v\",\"5.52\")",
 					"pm.collectionVariables.set(\"type\", items_for_test[pm.info.iteration][\"type\"])",
+					"pm.collectionVariables.set(\"filter\", \"likes\")",
+					"pm.collectionVariables.set(\"extended\", 0)",
+					"pm.collectionVariables.set(\"offset\", 0)",
+					"pm.collectionVariables.set(\"count\", 1000)",
+					"pm.collectionVariables.set(\"skip_own\", 0)",
+					"pm.collectionVariables.set(\"friends_only\", 0)",
 					""
 				]
 			}
@@ -471,38 +504,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"id": "ec8e5a53-bc1e-46e9-8570-c9861c042853",
-			"key": "access_token",
-			"value": ""
-		},
-		{
-			"id": "482912e3-5df1-4975-a24a-17ae99992296",
-			"key": "item_id",
-			"value": ""
-		},
-		{
-			"id": "c8a73daf-afc6-4532-b514-29a6d2415a84",
-			"key": "owner_id",
-			"value": ""
-		},
-		{
-			"id": "3582dfbe-d916-4f71-8b0b-43e35b233812",
-			"key": "prefix_uri",
-			"value": ""
-		},
-		{
-			"id": "76ec76a0-06c2-4d58-b071-f5e7e33c2cf9",
-			"key": "type",
-			"value": ""
-		},
-		{
-			"id": "5d2c2380-bf97-4dba-be36-bf4405184e1d",
-			"key": "v",
-			"value": ""
 		}
 	],
 	"protocolProfileBehavior": {}
