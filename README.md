@@ -1,6 +1,6 @@
 # vk-dev-api
 
-Ссылка на [Mind-map](https://mm.tt/1660363187?t=Y3WKRcIZqc)
+Ссылка на [Mind-map](https://mm.tt/1660363187?t=Y3WKRcIZqc)  
 Переработанная [Mind-map](https://mm.tt/1660582570?t=DdxukM6vJz)
 
 В тестовых реквестах Postman в Tests указаны схемы положительных ответов, схемы респонсов с ошибкой не валидируются  
